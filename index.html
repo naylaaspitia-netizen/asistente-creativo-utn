@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#5b5cf0">
+  <title>Asistente Creativo | Creativos Digitales</title>
+  <style>
+    :root{--bg:#f5f7fb;--card:#fff;--ink:#12162a;--muted:#697089;--line:#e7e9f2;--primary:#5b5cf0;--primary2:#7a5cff;--soft:#eeedff;--green:#22a06b;--shadow:0 22px 60px rgba(31,37,80,.10)}
+    *{box-sizing:border-box} body{margin:0;min-height:100vh;background:radial-gradient(circle at 8% 0%,rgba(91,92,240,.12),transparent 28rem),radial-gradient(circle at 95% 10%,rgba(24,197,217,.10),transparent 26rem),var(--bg);color:var(--ink);font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.5}
+    button,input{font:inherit} button{cursor:pointer}.top{padding:18px clamp(18px,4vw,58px);display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.84);backdrop-filter:blur(16px);position:sticky;top:0;z-index:10}.brand{display:flex;align-items:center;gap:12px}.mark{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(145deg,var(--primary),var(--primary2));color:#fff;font-weight:900;box-shadow:0 8px 20px rgba(91,92,240,.24)}.brand strong,.brand span{display:block}.brand span{font-size:.78rem;color:var(--muted)}.pill{border:1px solid #d8f0e5;background:#eaf8f1;color:#14724d;padding:7px 11px;border-radius:999px;font-size:.78rem;font-weight:800}
+    .shell{width:min(1120px,calc(100% - 26px));margin:34px auto 60px}.hero{display:grid;grid-template-columns:.78fr 1.22fr;gap:18px}.side,.chat{background:rgba(255,255,255,.96);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow)}.side{padding:28px}.eyebrow{margin:0 0 8px;color:#6168db;font-size:.7rem;font-weight:900;letter-spacing:.15em}.side h1{margin:0 0 14px;font-size:clamp(2rem,4.5vw,4rem);line-height:.98;letter-spacing:-.055em}.side h1 span{color:var(--primary)}.lead{color:var(--muted);font-size:1rem}.badge{display:inline-flex;gap:8px;align-items:center;margin:12px 0 22px;padding:8px 11px;border-radius:999px;background:var(--soft);color:#4748ce;font-size:.8rem;font-weight:850}.quick{display:grid;gap:9px}.quick button{border:1px solid var(--line);background:#f8f9fd;border-radius:14px;padding:12px 14px;text-align:left;color:#333851;font-weight:750;transition:.15s}.quick button:hover{background:#f1f0ff;border-color:#d8d6ff;color:#4b4ed0;transform:translateX(2px)}.note{margin-top:22px;padding:14px;border-radius:15px;background:#f8f9fd;border:1px solid var(--line);font-size:.84rem;color:var(--muted)}
+    .chat{min-height:640px;display:flex;flex-direction:column;overflow:hidden}.chat-head{padding:22px 24px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}.chat-head strong{font-size:1.15rem}.status{font-size:.78rem;color:var(--green);font-weight:850}.messages{flex:1;overflow:auto;padding:24px;background:linear-gradient(180deg,#fff,#fafbfe);max-height:68vh}.message{display:flex;gap:10px;margin-bottom:16px;align-items:flex-start}.message.user{justify-content:flex-end}.avatar{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;background:#15182b;color:#fff;flex:0 0 auto;font-size:.72rem;font-weight:950}.bubble{max-width:min(660px,82%);padding:13px 15px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 6px 18px rgba(31,37,80,.05)}.bubble p{margin:4px 0 0}.message.user .bubble{background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;border-color:transparent}.form{display:grid;grid-template-columns:1fr auto;gap:10px;padding:15px;border-top:1px solid var(--line);background:#fff}.form input{width:100%;border:1px solid var(--line);border-radius:14px;padding:14px;background:#fbfbfd;color:var(--ink)}.form input:focus{outline:3px solid rgba(91,92,240,.2);border-color:#bbbdfb;background:#fff}.send{border:0;border-radius:14px;padding:0 20px;color:#fff;background:linear-gradient(135deg,var(--primary),var(--primary2));font-weight:900;box-shadow:0 10px 24px rgba(91,92,240,.22)}footer{width:min(1120px,calc(100% - 26px));margin:0 auto 30px;color:var(--muted);font-size:.82rem;text-align:center}
+    @media(max-width:850px){.hero{grid-template-columns:1fr}.chat{min-height:570px}.side h1{font-size:3rem}}@media(max-width:560px){.pill{display:none}.shell{margin-top:18px}.side{padding:22px}.chat-head{padding:18px}.messages{padding:16px}.form{grid-template-columns:1fr}.send{padding:13px}.bubble{max-width:88%}}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><div class="mark">AC</div><div><strong>Asistente Creativo</strong><span>Creativos Digitales · 3.º grado</span></div></div>
+    <span class="pill">● Chatbot local</span>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <aside class="side">
+        <p class="eyebrow">CHATBOT EDUCATIVO</p>
+        <h1>Preguntá, probá y <span>seguí creando.</span></h1>
+        <p class="lead">Te ayudo con algoritmos, patrones y secuencias, bucles, eventos y problemas técnicos frecuentes. Te doy pistas sin resolverte la actividad.</p>
+        <div class="badge">Funciona con reglas · sin API externa</div>
+        <div class="quick">
+          <button data-message="No entiendo la consigna">No entiendo la consigna</button>
+          <button data-message="Dame una pista">Necesito una pista</button>
+          <button data-message="Que es un algoritmo">¿Qué es un algoritmo?</button>
+          <button data-message="Que es un patron o secuencia">Patrones y secuencias</button>
+          <button data-message="Que es un bucle">¿Qué es un bucle?</button>
+          <button data-message="Que es un evento">¿Qué es un evento?</button>
+          <button data-message="No funciona el mouse">No funciona el mouse</button>
+          <button data-message="No hay internet">No hay Internet</button>
+        </div>
+        <div class="note"><strong>Importante:</strong> este asistente no utiliza ChatGPT, Gemini ni Edcafé. Está programado en JavaScript con respuestas pedagógicas predefinidas para poder funcionar sin depender de Internet.</div>
+      </aside>
+
+      <section class="chat" aria-label="Chat con Asistente Creativo">
+        <div class="chat-head"><div><strong>Asistente Creativo</strong><div style="color:var(--muted);font-size:.82rem">Pistas y ayuda para seguir aprendiendo</div></div><span class="status">● listo</span></div>
+        <div id="messages" class="messages" aria-live="polite">
+          <div class="message"><span class="avatar">AI</span><div class="bubble"><strong>Asistente Creativo</strong><p>¡Hola! 👋 Estoy para ayudarte a pensar. Podés preguntarme por algoritmos, patrones, secuencias, bucles, eventos o por un problema técnico.</p></div></div>
+        </div>
+        <form id="chatForm" class="form">
+          <label for="chatInput" style="position:absolute;left:-9999px">Escribí tu pregunta</label>
+          <input id="chatInput" autocomplete="off" placeholder="Escribí tu pregunta…" maxlength="240">
+          <button class="send" type="submit">Enviar</button>
+        </form>
+      </section>
+    </section>
+  </main>
+  <footer>Proyecto académico · Tecnología Educativa · Asistente Creativo</footer>
+
+  <script>
+    function normalize(text){return text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim()}
+    function botReply(input){
+      const text=normalize(input);
+      if(!text)return 'Escribime una pregunta o elegí uno de los botones rápidos.';
+      if(text.includes('mouse')||text.includes('raton'))return 'Si el mouse falla, usá Tab para pasar de un botón a otro y Enter para seleccionar. También podés probar las flechas del teclado.';
+      if(text.includes('internet')||text.includes('conexion')||text.includes('wifi'))return 'Si la plataforma ya está disponible en la computadora, podés seguir con las actividades locales. Evitá recargar la página si no es necesario y avisale a la seño si una actividad depende de Internet.';
+      if(text.includes('algoritmo'))return 'Un algoritmo es una lista de pasos ordenados para lograr algo. Ejemplo: abrir la cartuchera, sacar un lápiz y escribir tu nombre. ¿Qué pasaría si cambiamos el orden?';
+      if(text.includes('patron')||text.includes('secuencia'))return 'Un patrón repite una regla. Una secuencia mantiene un orden. Mirá qué elemento aparece después de cada uno y buscá qué se repite.';
+      if(text.includes('bucle'))return 'Un bucle permite repetir una acción varias veces. Si algo ocurre 5 veces, en lugar de escribirlo 5 veces podemos decir: “repetir 5 veces”.';
+      if(text.includes('evento'))return 'Un evento es algo que sucede y hace que el programa responda. Por ejemplo: “cuando hago clic” → “el personaje salta”.';
+      if(text.includes('pista'))return 'Pista: buscá qué ocurre primero, qué se repite y qué cambia después. Después probá una opción y comprobá el resultado.';
+      if(text.includes('consigna')||text.includes('no entiendo')||text.includes('ayuda'))return 'Leé una parte por vez. Primero identificá qué te piden hacer; después buscá la información que necesitás. Si querés, escribime el tema: algoritmo, patrón, bucle o evento.';
+      if(text.includes('audio')||text.includes('auricular')||text.includes('parlante'))return 'La propuesta está pensada para que las consignas principales puedan comprenderse sin audio, usando texto y apoyos visuales.';
+      if(text.includes('lenta')||text.includes('computadora'))return 'Si la computadora está lenta, cerrá otras pestañas y programas. Dejá abierta solo la actividad y trabajen de a pares si hace falta.';
+      if(text.includes('respuesta')||text.includes('decime'))return 'No te voy a dar la respuesta directamente 😊. Contame qué parte te cuesta y te doy una pista para que puedas resolverla.';
+      return 'Puedo ayudarte con algoritmos, patrones, secuencias, bucles, eventos, consignas, mouse, Internet o computadoras lentas. Probá preguntarme por uno de esos temas.';
+    }
+    function escapeHtml(str){return str.replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[c]))}
+    function appendMessage(text,who){const c=document.getElementById('messages');const w=document.createElement('div');w.className='message '+who;if(who==='user'){w.innerHTML='<div class="bubble"><p>'+escapeHtml(text)+'</p></div>'}else{w.innerHTML='<span class="avatar">AI</span><div class="bubble"><strong>Asistente Creativo</strong><p>'+escapeHtml(text)+'</p></div>'}c.appendChild(w);c.scrollTop=c.scrollHeight}
+    function sendChat(message){appendMessage(message,'user');setTimeout(()=>appendMessage(botReply(message),'bot'),120)}
+    document.getElementById('chatForm').addEventListener('submit',e=>{e.preventDefault();const i=document.getElementById('chatInput');const m=i.value.trim();if(!m)return;i.value='';sendChat(m)});
+    document.querySelectorAll('[data-message]').forEach(b=>b.addEventListener('click',()=>sendChat(b.dataset.message)));
+  </script>
+</body>
+</html>
