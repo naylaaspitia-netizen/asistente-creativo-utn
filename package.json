@@ -1,0 +1,14 @@
+{
+  "name": "creativos-digitales-offline",
+  "version": "2.0.0",
+  "private": true,
+  "description": "PET Creativos Digitales: gamificación cooperativa y panel docente en red local",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  }
+}
