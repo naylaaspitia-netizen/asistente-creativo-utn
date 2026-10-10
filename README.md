@@ -1,15 +1,41 @@
-# Asistente Creativo – UTN
+# Creativos Digitales Offline · Misión Código
 
-Chatbot educativo desarrollado para la propuesta **Creativos Digitales** de 3.º grado.
+Proyecto Educativo Tecnológico para 3.º grado.
 
-## ¿Qué es?
-Es un chatbot local basado en reglas y palabras clave, programado con HTML, CSS y JavaScript. No utiliza ChatGPT, Gemini, Edcafé ni una API externa.
+## Versión pública
+La página pública funciona en GitHub Pages y permite probar:
+- 4 misiones: algoritmos, patrones y secuencias, bucles y eventos.
+- Gamificación cooperativa con bits, insignias y barra de progreso.
+- Asistente Creativo local basado en reglas.
+- Progreso guardado con `localStorage`.
+- Navegación usable con teclado.
 
-## Propósito
-Brindar pistas y explicaciones breves sobre algoritmos, patrones y secuencias, bucles y eventos, además de orientar ante problemas técnicos frecuentes (mouse, Internet o computadoras lentas).
+## Panel docente / Administradora
+El archivo `admin.html` contiene el panel docente.
 
-## Decisión pedagógica
-El asistente evita entregar respuestas directas y prioriza pistas y preguntas orientadoras. Fue diseñado así para acompañar el aprendizaje y para no depender de una conexión permanente a Internet.
+Para **seguimiento real entre varias computadoras** se debe ejecutar la versión de aula con Node.js + Socket.IO:
 
-## Uso
-Abrir `index.html` en un navegador. Para compartirlo públicamente, publicar el repositorio mediante GitHub Pages.
+```bash
+npm install
+npm start
+```
+
+Luego:
+- Estudiantes: `http://IP-DE-LA-PC-DOCENTE:3000/`
+- Docente: `http://IP-DE-LA-PC-DOCENTE:3000/admin.html`
+
+Código docente por defecto: `AULA3`
+
+Se recomienda cambiarlo antes de usarlo mediante la variable de entorno `ADMIN_CODE`.
+
+## Funciones del panel docente
+- Ver grupos conectados.
+- Ver misión actual, progreso, bits e insignias.
+- Recibir pedidos de ayuda.
+- Pausar/reanudar a todos.
+- Abrir una misión para todos o para un grupo.
+- Enviar mensajes.
+- Marcar pedidos como atendidos.
+- Otorgar la insignia “Equipo que ayuda”.
+
+La sincronización en tiempo real funciona dentro de la red local del aula y no necesita Internet.
