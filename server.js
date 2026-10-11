@@ -70,6 +70,22 @@ io.on('connection',socket=>{
     }
   });
 
+  socket.on('admin:watch',p=>{
+    if(!socket.data.admin)return;
+    const group=safe(p&&p.group,20);
+    const prev=socket.data.watchingGroup;
+    if(prev&&prev!==group)io.to('group:'+prev).emit('teacher:command',{type:'watching',active:false});
+    socket.data.watchingGroup=group;
+    if(group)io.to('group:'+group).emit('teacher:command',{type:'watching',active:true});
+  });
+
+  socket.on('admin:unwatch',p=>{
+    if(!socket.data.admin)return;
+    const group=safe((p&&p.group)||socket.data.watchingGroup,20);
+    if(group)io.to('group:'+group).emit('teacher:command',{type:'watching',active:false});
+    socket.data.watchingGroup='';
+  });
+
   socket.on('admin:clearHelp',p=>{
     if(!socket.data.admin)return;
     const g=groups[safe(p&&p.group,20)];
@@ -89,6 +105,7 @@ io.on('connection',socket=>{
   });
 
   socket.on('disconnect',()=>{
+    if(socket.data.admin&&socket.data.watchingGroup)io.to('group:'+socket.data.watchingGroup).emit('teacher:command',{type:'watching',active:false});
     const g=socket.data.group;
     if(g&&groups[g]&&groups[g].socketId===socket.id){
       groups[g].online=false;
