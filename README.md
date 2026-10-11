@@ -39,3 +39,7 @@ Se recomienda cambiarlo antes de usarlo mediante la variable de entorno `ADMIN_C
 - Otorgar la insignia “Equipo que ayuda”.
 
 La sincronización en tiempo real funciona dentro de la red local del aula y no necesita Internet.
+
+
+## Vista de acompañamiento docente
+El panel docente permite abrir una vista específica de cada grupo mediante **“👁 Acompañar grupo”**. Desde esa vista la docente puede observar la misión actual, la consigna abierta, progreso, bits, insignias y pedidos de ayuda; también puede enviar una pista, abrir otra misión, pausar/reanudar únicamente ese grupo y marcar la ayuda como atendida. En la pantalla estudiantil aparece un aviso visible cuando la docente está acompañando al equipo.
