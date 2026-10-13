@@ -36,7 +36,8 @@ io.on('connection',socket=>{
       bits:Number(prog.bits)||0,
       completed:Array.isArray(prog.completed)?prog.completed.slice(0,4):[],
       badges:Array.isArray(prog.badges)?prog.badges.slice(0,8).map(x=>safe(x,40)):[],
-      current:Number(prog.current)||0
+      current:Number(prog.current)||0,
+      feedback:safe(prog.feedback,180)
     },socket);
   });
 
@@ -47,7 +48,8 @@ io.on('connection',socket=>{
       bits:Number(p.bits)||0,
       completed:Array.isArray(p.completed)?p.completed.slice(0,4):[],
       badges:Array.isArray(p.badges)?p.badges.slice(0,8).map(x=>safe(x,40)):[],
-      current:Number(p.current)||0
+      current:Number(p.current)||0,
+      feedback:safe(p.feedback,180)
     },socket);
   });
 
